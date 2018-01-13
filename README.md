@@ -20,7 +20,7 @@ Configure the root of your repository with the following files and directories. 
 
 ## Feature Tasks  
 ### Max-Heap
-Create a `MaxHeap` Prototype class using [lecture code](https://github.com/codefellows/seattle-javascript-401d19/blob/master/20-hash-tables/lib/min-heap.js) as a starting point. 
+Create a `MaxHeap` Prototype using [lecture code](https://github.com/codefellows/seattle-javascript-401d19/blob/master/20-hash-tables/lib/min-heap.js) as a starting point. 
 ### Sorting Method
 Research and implement one of the following Sorting Methods:
 * [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
