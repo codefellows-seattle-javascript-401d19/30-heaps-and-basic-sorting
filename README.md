@@ -27,6 +27,8 @@ Research and implement one of the following Sorting Methods:
 * [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
 * [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
 
+Your function should take an integer array a a single argument and sort it in-place (e.g. mutate the array). You can use helper functions if you need extra arguments in your sorting procedure.
+
 ## Tests
 * Unit test each method of your prototype.
 * Unit test your sorting method. 
