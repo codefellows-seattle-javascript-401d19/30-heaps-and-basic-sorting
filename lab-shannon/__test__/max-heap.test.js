@@ -66,4 +66,12 @@ describe(`Max heap`, () => {
     testArray.insert(14);
     expect(testArray._data).toEqual([14,9,4,5]);
   });
+  test(`getMinimum should return the smallest value of the heap`, () => {
+    let testArray = new maxHeap();
+    testArray.insert(9);
+    testArray.insert(5);
+    testArray.insert(4);
+    testArray.insert(14);
+    expect(testArray.getMinimum(0)).toEqual(4);
+  });
 });

@@ -45,8 +45,6 @@ class maxHeap{
     }
   }
 
-  // bubbleDown(index){}
-
   insert(value){
     if(typeof value !== 'number'){
       throw new TypeError(`__ERROR__ value must be a number`);
@@ -55,7 +53,26 @@ class maxHeap{
     this.bubbleUp(this._data.length - 1);
   }
 
-  getMax(){}
+  getMinimum(index){
+    let minimum = 0;
+    let rightIndex = this._getRightIndex(index);
+    let leftIndex = this._getLeftIndex(index);
+
+    if(rightIndex <= this._data.length - 1){
+      if(this._data[rightIndex] < this._data[index]){
+        minimum = this._data[rightIndex];
+        this.getMinimum(rightIndex);
+      }
+    }
+
+    if(leftIndex <= this._data.length - 1){
+      if(this._data[leftIndex] < this._data[index]){
+        minimum = this._data[rightIndex];
+        this.getMinimum(leftIndex);
+      }
+    }
+    return minimum;
+  }
 }
 
 module.exports = maxHeap;
