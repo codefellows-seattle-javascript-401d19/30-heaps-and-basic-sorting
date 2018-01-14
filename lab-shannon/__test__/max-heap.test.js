@@ -47,7 +47,7 @@ describe(`Max heap`, () => {
     testArray.insert(11);
     testArray.insert(14);
     testArray._swapValues(1,2);
-    expect(testArray._data).toEqual([9,4,5,11,14]);
+    expect(testArray._data).toEqual([14,4,11,5,9]);
   });
   test(`bubbleUp should ensure that the largest number is at index 0 and reorder the heap as needed`, () => {
     let testArray = new maxHeap();
@@ -55,8 +55,15 @@ describe(`Max heap`, () => {
     testArray.insert(5);
     testArray.insert(4);
     testArray.insert(11);
-    testArray.insert(14);
     testArray.bubbleUp(4);
-    expect(testArray._data).toEqual([14,9,4,11,5]);
+    expect(testArray._data).toEqual([11,9,4,5]);
+  });
+  test(`insert should add a new value to the heap, ensuring the largest value is still at index 0`, () => {
+    let testArray = new maxHeap();
+    testArray.insert(9);
+    testArray.insert(5);
+    testArray.insert(4);
+    testArray.insert(14);
+    expect(testArray._data).toEqual([14,9,4,5]);
   });
 });

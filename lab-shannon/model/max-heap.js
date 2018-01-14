@@ -52,7 +52,7 @@ class maxHeap{
       throw new TypeError(`__ERROR__ value must be a number`);
     }
     this._data.push(value);
-    // this.bubbleUp(value);
+    this.bubbleUp(this._data.length - 1);
   }
 
   getMax(){}
