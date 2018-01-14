@@ -7,4 +7,9 @@ describe('tests for sort.js', () => {
     expect(Sort.selectionSort([9, 4, 5, 6, 2, 1, 7])).toEqual([1, 2, 4, 5, 6, 7, 9]);
     expect(Sort.selectionSort([-9, -4, -5, -6, -2, -1, -7])).toEqual([-9, -7, -6, -5, -4, -2, -1]);
   });
+
+  test('test that bubble sort returns a sorted array', () => {
+    expect(Sort.bubbleSort([9, 4, 5, 6, 2, 1, 7])).toEqual([1, 2, 4, 5, 6, 7, 9]);
+    expect(Sort.bubbleSort([-9, -4, -5, -6, -2, -1, -7])).toEqual([-9, -7, -6, -5, -4, -2, -1]);
+  });
 });

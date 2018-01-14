@@ -2,7 +2,6 @@
 
 const Sort = {};
 
-
 Sort.selectionSort = array => {
   const unsorted = array;
   const sorted = [];
@@ -18,6 +17,23 @@ Sort.selectionSort = array => {
     sorted.push(currentMin);
   }
   return sorted;
+};
+
+Sort.bubbleSort = array => {
+  const arrayToSort = array;
+  let swapWindow = arrayToSort.length - 1;
+  let temp = null;
+  while (swapWindow){
+    for (let i = 0; i < swapWindow; i++){
+      if (arrayToSort[i] > arrayToSort[i + 1]){
+        temp = arrayToSort[i];
+        arrayToSort[i] = arrayToSort[i + 1];
+        arrayToSort[i + 1] = temp;
+      }
+    }
+    swapWindow -= 1;
+  }
+  return arrayToSort;
 };
 
 module.exports = Sort;
