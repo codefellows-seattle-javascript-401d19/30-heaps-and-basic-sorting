@@ -34,8 +34,17 @@ class maxHeap{
     this._data[index2] = tempValue;
   }
 
-  // bubbleUp(index){}
-  //
+  bubbleUp(index){
+    let parentIndex = this._getParentIndex(index);
+
+    if(parentIndex === null){
+      return;
+    }else if(this._data[index] > this._data[parentIndex]){
+      this._swapValues(parentIndex, index);
+      this.bubbleUp(parentIndex);
+    }
+  }
+
   // bubbleDown(index){}
 
   insert(value){
