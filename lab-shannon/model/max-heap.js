@@ -53,30 +53,32 @@ class maxHeap{
     this.bubbleUp(this._data.length - 1);
   }
 
-  getMinimum(index, rightMin = null, leftMin = null){
-    console.log(rightMin, `rightMin`);
-    console.log(leftMin, `leftMin`);
+  getMinimum(index){
+    let minIndex = index;
+    console.log(this._data[minIndex], `min`);
     let rightIndex = this._getRightIndex(index);
     let leftIndex = this._getLeftIndex(index);
 
     if(rightIndex <= this._data.length - 1){
-      if(this._data[rightIndex] < this._data[index]){
-        rightMin = this._data[rightIndex];
-        this.getMinimum(rightIndex, rightMin, leftMin);
+      if(this._data[rightIndex] < this._data[minIndex]){
+        console.log(`rightIndex ran`);
+        minIndex = rightIndex;
+        console.log(this._data[minIndex], `min within rightIndex loop`);
+        this.getMinimum(minIndex);
       }
     }
+
+    console.log(this._data[minIndex], `min between loops`);
 
     if(leftIndex <= this._data.length - 1){
-      if(this._data[leftIndex] < this._data[index]){
-        leftMin = this._data[leftIndex];
-        this.getMinimum(leftIndex, rightMin, leftMin);
+      if(this._data[leftIndex] < this._data[minIndex]){
+        console.log(`leftIndex ran`);
+        minIndex = leftIndex;
+        this.getMinimum(minIndex);
       }
     }
 
-    if(leftMin < rightMin){
-      return leftMin;
-    }
-    return rightMin;
+    return this._data[minIndex];
   }
 }
 
