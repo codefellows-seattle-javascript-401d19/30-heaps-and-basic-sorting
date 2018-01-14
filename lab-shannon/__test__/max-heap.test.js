@@ -39,13 +39,14 @@ describe(`Max heap`, () => {
     expect(testArray._getRightIndex(0)).toEqual(2);
     expect(testArray._getRightIndex(2)).toEqual(6);
   });
-  test(`swap values should swap the values of the two indices provided`, () => {
+  test(`swapValues should swap the values of the two indices provided`, () => {
     let testArray = new maxHeap();
     testArray.insert(9);
     testArray.insert(5);
     testArray.insert(4);
     testArray.insert(11);
     testArray.insert(14);
-    expect(testArray._swap(4,5)).toEqual();
+    testArray._swapValues(1,2);
+    expect(testArray._data).toEqual([9,4,5,11,14]);
   });
 });

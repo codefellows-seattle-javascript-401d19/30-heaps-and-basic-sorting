@@ -28,18 +28,22 @@ class maxHeap{
     return Math.floor((index * 2) + 2);
   }
 
-  _swapValues(val1, val2){
-    let tempValue = this._data[val1];
-    this._data[val1] = this._data[val2];
-    this._data[val2] = tempValue;
+  _swapValues(index1, index2){
+    let tempValue = this._data[index1];
+    this._data[index1] = this._data[index2];
+    this._data[index2] = tempValue;
   }
 
-  bubbleUp(index){}
-
-  bubbleDown(index){}
+  // bubbleUp(index){}
+  //
+  // bubbleDown(index){}
 
   insert(value){
+    if(typeof value !== 'number'){
+      throw new TypeError(`__ERROR__ value must be a number`);
+    }
     this._data.push(value);
+    // this.bubbleUp(value);
   }
 
   getMax(){}
