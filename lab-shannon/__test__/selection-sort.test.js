@@ -8,4 +8,8 @@ describe(`selection sort`, () => {
     let sortedArray = selectionSort(testArray);
     expect(sortedArray).toEqual([2,4,5,6,7,9,9]);
   });
+  test(`selection sort should sort the array in place from smallest to largest`, () => {
+    let testArray = [9,6,'fish',5,9,4,7];
+    expect(() => selectionSort(testArray)).toThrow();
+  });
 });
