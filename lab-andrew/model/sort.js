@@ -3,55 +3,52 @@
 const Sort = {};
 
 Sort.selectionSort = array => {
-  const unsorted = array;
   const sorted = [];
-  while (unsorted.length){
+  while (array.length){
     let min = Infinity;
-    for (let number of unsorted){
+    for (let number of array){
       if (number < min){
         min = number;
       }
     }
-    let minIndex = unsorted.indexOf(min);
-    let currentMin = unsorted.splice(minIndex, 1)[0];
+    let minIndex = array.indexOf(min);
+    let currentMin = array.splice(minIndex, 1)[0];
     sorted.push(currentMin);
   }
   return sorted;
 };
 
 Sort.bubbleSort = array => {
-  const arrayToSort = array;
-  if (!arrayToSort.length) return arrayToSort;
-  let swapWindow = arrayToSort.length - 1;
+  if (!array.length) return array;
+  let swapWindow = array.length - 1;
   let temp = null;
   while (swapWindow){
     for (let i = 0; i < swapWindow; i++){
-      if (arrayToSort[i] > arrayToSort[i + 1]){
-        temp = arrayToSort[i];
-        arrayToSort[i] = arrayToSort[i + 1];
-        arrayToSort[i + 1] = temp;
+      if (array[i] > array[i + 1]){
+        temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
       }
     }
     swapWindow -= 1;
   }
-  return arrayToSort;
+  return array;
 };
 
 Sort.insertionSort = array => {
-  const arrayToSort = array;
   let temp = null;
-  for (let index in arrayToSort){
+  for (let index in array){
     for (let i = index; i > 0; i--){
-      if (arrayToSort[i] < arrayToSort[i - 1]){
-        temp = arrayToSort[i];
-        arrayToSort[i] = arrayToSort[i - 1];
-        arrayToSort[i - 1] = temp;
+      if (array[i] < array[i - 1]){
+        temp = array[i];
+        array[i] = array[i - 1];
+        array[i - 1] = temp;
       } else {
         break;
       }
     }
   }
-  return arrayToSort;
+  return array;
 };
 
 module.exports = Sort;
