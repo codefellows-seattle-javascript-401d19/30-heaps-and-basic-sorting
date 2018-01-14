@@ -38,10 +38,19 @@ class MaxHeap {
   // lg n
   insert(value) {
     if (typeof value !== 'number')
-      throw new TypeError('__ERROR__ value should be numeric');
+      throw new TypeError('__ERROR__ value should be numeric for insert()');
 
     this._data.push(value);
     this._bubbleUp(this._data.length - 1);
+  }
+
+  insertMultiple(array) {
+    if (typeof array !== 'object') throw new TypeError('__ERROR__ Input must be an array for insertMultiple()');
+   
+    for(let value in array){
+      this._data.push(value);
+      this._bubbleUp(this._data.length - 1);
+    }
   }
 
   _swapValues(indexA, indexB) {
