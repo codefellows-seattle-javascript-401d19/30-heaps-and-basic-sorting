@@ -1,6 +1,9 @@
 'use strict';
 
-module.exports = array => {
+const Sort = {};
+
+
+Sort.selectionSort = array => {
   const unsorted = array;
   const sorted = [];
   while (unsorted.length){
@@ -16,3 +19,5 @@ module.exports = array => {
   }
   return sorted;
 };
+
+module.exports = Sort;
