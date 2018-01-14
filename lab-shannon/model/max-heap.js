@@ -24,7 +24,7 @@ class maxHeap{
     return Math.floor((index * 2) + 1);
   }
 
-  __getRightIndex(index){
+  _getRightIndex(index){
     return Math.floor((index * 2) + 2);
   }
 
@@ -38,7 +38,9 @@ class maxHeap{
 
   bubbleDown(index){}
 
-  insert(value){}
+  insert(value){
+    this._data.push(value);
+  }
 
   getMax(){}
 }
