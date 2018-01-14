@@ -21,6 +21,7 @@ Sort.selectionSort = array => {
 
 Sort.bubbleSort = array => {
   const arrayToSort = array;
+  if (!arrayToSort.length) return arrayToSort;
   let swapWindow = arrayToSort.length - 1;
   let temp = null;
   while (swapWindow){
@@ -32,6 +33,23 @@ Sort.bubbleSort = array => {
       }
     }
     swapWindow -= 1;
+  }
+  return arrayToSort;
+};
+
+Sort.insertionSort = array => {
+  const arrayToSort = array;
+  let temp = null;
+  for (let index in arrayToSort){
+    for (let i = index; i > 0; i--){
+      if (arrayToSort[i] < arrayToSort[i - 1]){
+        temp = arrayToSort[i];
+        arrayToSort[i] = arrayToSort[i - 1];
+        arrayToSort[i - 1] = temp;
+      } else {
+        break;
+      }
+    }
   }
   return arrayToSort;
 };
