@@ -54,24 +54,31 @@ class maxHeap{
   }
 
   getMinimum(index){
-    let minimum = 0;
+    let rightMin = null;
+    console.log(rightMin, `rightMin`);
+    let leftMin = null;
+    console.log(leftMin, `leftMin`);
     let rightIndex = this._getRightIndex(index);
     let leftIndex = this._getLeftIndex(index);
 
     if(rightIndex <= this._data.length - 1){
       if(this._data[rightIndex] < this._data[index]){
-        minimum = this._data[rightIndex];
-        this.getMinimum(rightIndex);
+        rightMin = this._data[rightIndex];
+        this.getMinimum(rightIndex, rightMin);
       }
     }
 
     if(leftIndex <= this._data.length - 1){
       if(this._data[leftIndex] < this._data[index]){
-        minimum = this._data[rightIndex];
-        this.getMinimum(leftIndex);
+        leftMin = this._data[leftIndex];
+        this.getMinimum(leftIndex, leftMin);
       }
     }
-    return minimum;
+
+    if(leftMin < rightMin){
+      return leftMin;
+    }
+    return rightMin;
   }
 }
 

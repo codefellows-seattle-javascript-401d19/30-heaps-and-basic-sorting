@@ -72,6 +72,11 @@ describe(`Max heap`, () => {
     testArray.insert(5);
     testArray.insert(4);
     testArray.insert(14);
-    expect(testArray.getMinimum(0)).toEqual(4);
+    testArray.insert(20);
+    testArray.insert(22);
+    testArray.insert(8);
+    testArray.insert(1);
+    console.log(testArray._data);
+    expect(testArray.getMinimum(0)).toEqual(1);
   });
 });
