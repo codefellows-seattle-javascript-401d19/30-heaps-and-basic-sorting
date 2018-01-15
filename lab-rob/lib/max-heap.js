@@ -25,7 +25,7 @@ class MaxHeap {
   _bubbleUp(index) {
     let parentIndex = this._getParentIndex(index);
 
-    if(!parentIndex)
+    if(parentIndex === null)
       return;
 
     if(this._data[parentIndex] < this._data[index]) {
