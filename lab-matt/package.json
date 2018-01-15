@@ -1,0 +1,11 @@
+{
+  "name": "lab-matt",
+  "version": "1.0.0",
+  "description": "lab 30 code fellows 401 - max heap & basic sorting",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "author": "Matthew LeBlanc",
+  "license": "ISC"
+}
