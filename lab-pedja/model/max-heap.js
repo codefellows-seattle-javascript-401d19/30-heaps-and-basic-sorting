@@ -87,6 +87,6 @@ class MaxHeap{
     
     return this._data[0];
   }
-};
+}
 
 module.exports = MaxHeap;

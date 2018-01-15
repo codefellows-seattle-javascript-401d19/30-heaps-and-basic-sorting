@@ -1,37 +1,43 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) Lab 30: Max Heap & Basic Sorting
 ======
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+* Purpose of this lab is to practice implementation of max heap and basic sort in place array methods - used method in this lab is `insertion-sort`
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughtfully name and organize any aditional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-* **model/** - contains model definitions
-* **\_\_test\_\_/** - contains test modules
+## Code Style
+* Vanilla Javascript and Jest for testing
 
-## Feature Tasks  
-### Max-Heap
-Create a `MaxHeap` Prototype using [lecture code](https://github.com/codefellows/seattle-javascript-401d19/blob/master/20-hash-tables/lib/min-heap.js) as a starting point. 
-### Sorting Method
-Research and implement one of the following Sorting Methods:
-* [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
-* [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
-* [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
 
-Your function should take an integer array a a single argument and sort it in-place (e.g. mutate the array). You can use helper functions if you need extra arguments in your sorting procedure.
+## Tech / framework used
 
-## Tests
-* Unit test each method of your prototype.
-* Unit test your sorting method. 
+* [npm package jest](http://facebook.github.io/jest/) used for TDD
 
-## Documentation
-In your README.md describe the exported values of each module you have defined. Every function description should include it's airty (expected number of paramiters), the expected data for each paramiter (data-type and limitations), and it's behavior (for both valid and invalued use). Feel free to write any additional information in your README.md.
+
+
+## Installation and How To Use
+
+  * Fork || clone this repo to you computer.
+
+  * Run `npm install`
+
+  * To run tests run `npm test` command.
+
+
+## Max Heap
+
+* Max heaps are data structures in which value in each internal node is greater than or equal to the values in the children of that node. With find max value of constant lookup time - Big 0(1).
+
+## Sorting inplace methods
+
+`insertion-sort`
+* This method expects an array as parameter. If parameter is not an array - error will be thrown. This method is basic in place sorting method returns array sorted from smallest to biggest. Used for small data sets, at each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
+
+  ``` javascript
+  let testArray = [6, 3, 4, 7, 5];
+  let sortedArray = SortObj.insertionSort(testArray);
+  console.log(sortedArray); // [3, 4, 5, 6, 7]
+  ```
+
+
+## Licence
+MIT © Pedja Josifovic
+
