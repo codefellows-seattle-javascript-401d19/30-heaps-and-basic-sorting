@@ -1,0 +1,28 @@
+{
+  "name": "lab-andrew",
+  "version": "1.0.0",
+  "description": "max-heap-and-sorts",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALB37/30-heaps-and-basic-sorting.git"
+  },
+  "keywords": [
+    "max-heaps",
+    "sorting-algorithms",
+    "data-structures"
+  ],
+  "author": "Andrew Bloom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ALB37/30-heaps-and-basic-sorting/issues"
+  },
+  "homepage": "https://github.com/ALB37/30-heaps-and-basic-sorting#readme",
+  "dependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.0.6"
+  }
+}
