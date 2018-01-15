@@ -22,13 +22,6 @@ describe('Max Heap', () => {
 
     expect(mockMaxHeap._data).toEqual([20,15,3,4,10,0]);
   });
-
-  test('Proper insertion of a multiple values', () => {
-    const mockMaxHeap = new MaxHeap();
-    mockMaxHeap.insertMultiple([4,10,3,15,20,0]);
-
-    expect(mockMaxHeap._data).toEqual([20,15,3,4,10,0]);
-  });
 });
 
 describe('Min Heap', () => {

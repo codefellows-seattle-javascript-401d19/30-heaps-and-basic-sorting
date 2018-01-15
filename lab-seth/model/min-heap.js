@@ -29,15 +29,6 @@ class MinHeap {
     this._bubbleUp(this._data.length - 1);
   }
 
-  // insertMultiple(array) {
-  //   if (typeof array !== 'object') throw new TypeError('__ERROR__ Input must be an array for insertMultiple()');
-
-  //   for (let value in array) {
-  //     this._data.push(value);
-  //     this._bubbleUp(this._data.length - 1);
-  //   }
-  // }
-
   _swapValues(indexA, indexB) {
     let tempSwapValue = this._data[indexA];
 

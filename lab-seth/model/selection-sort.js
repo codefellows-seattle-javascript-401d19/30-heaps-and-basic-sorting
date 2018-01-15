@@ -17,5 +17,7 @@ const selectionSort = (array) => {
     array[i] = array[min];
     array[min] = temp;
   }
+  return array;
 }
 
+module.exports = selectionSort;
