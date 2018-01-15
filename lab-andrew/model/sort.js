@@ -3,19 +3,19 @@
 const Sort = {};
 
 Sort.selectionSort = array => {
-  const sorted = [];
-  while (array.length){
+  const unsorted = array.splice(0, array.length);
+  while (unsorted.length){
     let min = Infinity;
-    for (let number of array){
+    for (let number of unsorted){
       if (number < min){
         min = number;
       }
     }
-    let minIndex = array.indexOf(min);
-    let currentMin = array.splice(minIndex, 1)[0];
-    sorted.push(currentMin);
+    let minIndex = unsorted.indexOf(min);
+    let currentMin = unsorted.splice(minIndex, 1)[0];
+    array.push(currentMin);
   }
-  return sorted;
+  return array;
 };
 
 Sort.bubbleSort = array => {
