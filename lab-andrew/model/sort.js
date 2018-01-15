@@ -3,17 +3,18 @@
 const Sort = {};
 
 Sort.selectionSort = array => {
-  const unsorted = array.splice(0, array.length);
-  while (unsorted.length){
+  let minIndex = null;
+  for (let i = 0; i < array.length; i++){
     let min = Infinity;
-    for (let number of unsorted){
-      if (number < min){
-        min = number;
+    let temp = array[i];
+    for (let j = i; j < array.length; j++){
+      if (array[j] < min){
+        min = array[j];
+        minIndex = j;
       }
     }
-    let minIndex = unsorted.indexOf(min);
-    let currentMin = unsorted.splice(minIndex, 1)[0];
-    array.push(currentMin);
+    array[i] = array[minIndex];
+    array[minIndex] = temp;
   }
   return array;
 };
