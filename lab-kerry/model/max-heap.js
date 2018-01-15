@@ -85,6 +85,30 @@ class MaxHeap{
 
 	return this._data[0];
 	}
+
+	selectionSort(array) {
+
+	if (array.length <= 0) {
+		throw 'Array must contain at least one number';
+	}
+
+	if (array.length === null) {
+		throw 'Array must not be null';
+	}
+
+	for (let i = 0; i < array.length; i++) {
+		let minimumIndex = i;
+
+		for (let j = i + 1; j < array.length; j++) {
+			if (array[j] < array[minimumIndex]) {
+				minimumIndex = j;
+			}
+		}
+		this._swapValues(i, minimumIndex)
+		}
+	return array;
+	}
+
 };
 
 module.exports = MaxHeap;

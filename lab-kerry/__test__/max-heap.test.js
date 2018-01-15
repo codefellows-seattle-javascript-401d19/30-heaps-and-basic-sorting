@@ -3,6 +3,7 @@
 let MaxHeap = require('../model/max-heap');
 
 let Heap = new MaxHeap();
+let array = [110, 100, 36, 19, 32, 17, 3, 2, 7, 1, 25];
 
 let heapFactory = () => {
 	Heap.insert(100);
@@ -18,18 +19,34 @@ let heapFactory = () => {
 	Heap.insert(110);
 };
 
+describe('Testing MaxHeap \'get\' helper methods', () => {
+
+	describe('MaxHeap _getParentIndex', () => {
+
+		test('MaxHeap _getParentIndex should return null if MaxHeap is empty.', () => {
+			Heap._data = []
+			expect(Heap._getParentIndex(0)).toBeNull();
+		});
+
+		test('MaxHeap _getParentIndex should return index .', () => {
+			Heap._data = []
+			expect(Heap._getParentIndex(10)).toBe(4);
+		});
+	});
+
+});
+
 describe('Testing MaxHeap and its public methods', () => {
-	
+	beforeEach(() => {
+		heapFactory();
+	});
+
+	afterEach(() => {
+		return Heap._data = []
+	});
 	
 	describe('MaxHeap creation/insertion', () => {
-		beforeEach(() => {
-			heapFactory();
-		});
-
-		afterEach(() => { 
-			return Heap._data = []
-		});
-
+	
 		test('MaxHeap should be created and abide by the rules of a MaxHeap.', () => {
 			let expected = [110, 100, 36, 19, 32, 17, 3, 2, 7, 1, 25];
 			expect(Heap._data).toEqual(expected);
@@ -51,5 +68,66 @@ describe('Testing MaxHeap and its public methods', () => {
 			}).toThrow();
 		});
 	})
+
+	describe('MaxHeap extractMaximum', () => {
+		test('MaxHeap extractMaximum should find and remove highest value in MaxHeap.', () => {
+			expect(Heap.extractMaximum()).toEqual(110);
+			expect(Heap._data).toBeInstanceOf(Array);
+			expect(Heap._data).toHaveLength(10);
+		});
+
+		test('MaxHeap extractMaximum should return null if MaxHeap is empty.', () => {
+			Heap._data = []
+			expect(Heap.extractMaximum()).toBeNull();
+			expect(Heap._data).toBeInstanceOf(Array);
+			expect(Heap._data).toHaveLength(0);
+		});
+	});
+
+	describe('MaxHeap peek', () => {
+		test('MaxHeap peek should show highest value in MaxHeap.', () => {
+			expect(Heap.peek()).toEqual(110);
+			expect(Heap._data).toBeInstanceOf(Array);
+			expect(Heap._data).toHaveLength(11);
+		});
+
+		test('MaxHeap peek should return null if MaxHeap is empty.', () => {
+			Heap._data = []
+			expect(Heap.peek()).toBeNull();
+			expect(Heap._data).toBeInstanceOf(Array);
+			expect(Heap._data).toHaveLength(0);
+		});
+	});
+
+});
+
+describe('Testing selection sort method', () => {
+	beforeEach(() => {
+		heapFactory();
+	});
+
+	afterEach(() => {
+		return Heap._data = []
+	});
+	
+	test('Selection sort should take valid heap and sort resulting array from smallest to largest.', () => {
+		expect(Heap.selectionSort(Heap._data)).toEqual([1, 2, 3, 7, 17, 19, 25, 32, 36, 100, 110]);
+		expect(Heap._data).toBeInstanceOf(Array);
+	});
+	test('Selection sort should be throw error if wrong data type passed.', () => {
+		Heap._data = [];
+		
+		expect(() => {
+			Heap.selectionSort(Heap._data);
+		}).toThrow();
+	});
+	test('Selection sort should be throw error if wrong data type passed.', () => {
+		Heap._data = null;
+
+		expect(() => {
+			Heap.selectionSort(Heap._data);
+		}).toThrow();
+	});
+
 })
 
