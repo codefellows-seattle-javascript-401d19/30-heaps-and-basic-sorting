@@ -66,7 +66,7 @@ class MaxHeap {
     }
   }
 
-  extractMax() {
+  extractMaximum() {
     if (this._data.length <= 0)
       return null;
 
