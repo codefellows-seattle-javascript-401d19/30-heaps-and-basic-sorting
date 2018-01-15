@@ -44,7 +44,7 @@ This is a module which contains three sorting methods. They all have an arity of
 
 #### Sort.selectionSort:
 
-This method works by scanning the unsorted array, finding the smallest number, and then splicing that value and pushing it to another array, which will be sorted.
+This method works by doing a loop through the entire array. Within that loop, it loops through the remainder of the array, the unsorted portion of the array, and finds the smallest number. It then splices that value and pushing it to the end of the sorted portion of the array (i.e. the beginning of the unsorted portion).
 
 #### Sort.bubbleSort:
 
@@ -57,7 +57,7 @@ This method works by looping through the array and then looping backwards from t
 ***
 ## Code Examples:
 
-```
+```javascript
 const MaxHeap = require('./model/max-heap');
 const Sort = require('./model/sort');
 
