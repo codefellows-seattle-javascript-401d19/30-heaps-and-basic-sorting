@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest -i --coverage",
+    "watch": "jest -i --coverage --watch",
     "lint": "eslint ."
   },
   "keywords": [],
