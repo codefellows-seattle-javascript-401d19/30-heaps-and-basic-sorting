@@ -30,10 +30,7 @@ class MaxHeap {
   }
 
   _swapValues(indexA, indexB) {
-    let tempSwapValue = this._data[indexA];
-
-    this._data[indexA] = this._data[indexB];
-    this._data[indexB] = tempSwapValue;
+    [this._data[indexA], this._data[indexB]] = [this._data[indexB], this._data[indexA]];
   }
 
   _bubbleUp(index) {
@@ -52,12 +49,13 @@ class MaxHeap {
     let maxIndex = index;
     let leftIndex = this._getLeftIndex(index);
     let rightIndex = this._getRightIndex(index);
-
-    if (leftIndex >= this._data.length - 1) {
+    
+    if (leftIndex <= this._data.length - 1) {
       if (this._data[maxIndex] < this._data[leftIndex])
         maxIndex = leftIndex;
     }
-    if (rightIndex >= this._data.length - 1) {
+
+    if (rightIndex <= this._data.length - 1) {
       if (this._data[maxIndex] < this._data[rightIndex])
         maxIndex = rightIndex;
     }

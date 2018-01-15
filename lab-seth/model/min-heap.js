@@ -68,7 +68,7 @@ class MinHeap {
     }
   }
 
-  extractMininum() {
+  extractMinimum() {
     if (this._data.length <= 0)
       return null;
 
