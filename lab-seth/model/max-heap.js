@@ -1,18 +1,3 @@
-//DONE: Max-Heap
-// Create a MaxHeap Prototype using lecture code as a starting point.
-
-
-// Sorting Method
-// Research and implement one of the following Sorting Methods:
-// TODO: Bubble Sort
-// TODO: Insertion Sort
-// TODO: Selection Sort
-// Your function should take an integer array and a single argument and sort it in -place(e.g.mutate the array).You can use helper functions if you need extra arguments in your sorting procedure.
-
-// Tests
-// TODO: Unit test each method of your prototype.
-// TODO: Unit test your sorting method.
-
 'use strict';
 
 class MaxHeap {
@@ -87,11 +72,11 @@ class MaxHeap {
     if (this._data.length <= 0)
       return null;
 
-    let min = this._data[0];
+    let max = this._data[0];
     let lastValue = this._data.pop();
     this._data[0] = lastValue;
     this._bubbleDown(0);
-    return min;
+    return max;
   }
 
   peek() {
