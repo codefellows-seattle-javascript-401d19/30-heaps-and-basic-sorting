@@ -68,15 +68,15 @@ class MaxHeap{
     }
   }
 
-  extractMininum(){
+  extractMaximum(){
     if(this._data.length <= 0)
       return null;
 
-    let min = this._data[0];
+    let max = this._data[0];
     let lastValue = this._data.pop();
     this._data[0] = lastValue;
     this._bubbleDown(0);
-    return min;
+    return max;
   }
 
   peek(){
