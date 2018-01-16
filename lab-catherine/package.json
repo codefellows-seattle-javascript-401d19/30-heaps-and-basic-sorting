@@ -1,0 +1,32 @@
+{
+  "name": "lab-catherine",
+  "version": "1.0.0",
+  "description": "Code 401 lab 30 max heap ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccloops/30-heaps-and-basic-sorting.git"
+  },
+  "keywords": [
+    "max",
+    "heap",
+    "basic",
+    "sorting"
+  ],
+  "author": "Catherine Looper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccloops/30-heaps-and-basic-sorting/issues"
+  },
+  "homepage": "https://github.com/ccloops/30-heaps-and-basic-sorting#readme",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.0.6"
+  }
+}
