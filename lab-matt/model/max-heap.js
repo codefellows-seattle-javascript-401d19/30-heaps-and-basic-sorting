@@ -20,7 +20,6 @@ class MaxHeap {
     return (2 * index) + 2;
   }
 
-  // lg n
   insert(value) {
      if (typeof value !== 'number')
       throw new TypeError('__ERROR__ value should be numeric');
@@ -49,34 +48,34 @@ class MaxHeap {
   }
 
   _bubbleDown(index) {
-    let minIndex = index;
+    let maxIndex = index;
     let leftIndex = this._getLeftIndex(index);
     let rightIndex = this._getRightIndex(index);
 
     if (leftIndex <= this._data.length -1) {
-      if (this._data[minIndex] > this._data[leftIndex])
-        minIndex = leftIndex;
+      if (this._data[maxIndex] < this._data[leftIndex])
+        maxIndex = leftIndex;
     }
     if (rightIndex <= this._data.length -1) {
-      if (this._data[minIndex] > this._data[rightIndex])
-        minIndex = rightIndex;
+      if (this._data[maxIndex] < this._data[rightIndex])
+        maxIndex = rightIndex;
     }
 
-    if (minIndex != index) {
-      this._swapValues(index, minIndex);
-      this._bubbleDown(minIndex);
+    if (maxIndex != index) {
+      this._swapValues(index, maxIndex);
+      this._bubbleDown(maxIndex);
     }
   }
 
-  extractMinimum() {
+  extractMaximum() {
     if (this._data.length <= 0)
       return null;
     
-    let min = this._data[0];
+    let max = this._data[0];
     let lastValue = this._data.pop();
     this._data[0] = lastValue;
     this._bubbleDown(0);
-    return min;
+    return max;
   }
 
   peek() {
