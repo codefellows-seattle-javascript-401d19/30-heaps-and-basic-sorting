@@ -60,7 +60,7 @@ describe('Max Heap', () => {
     expect(mockMaxHeap._data).toEqual([90,50,10,1,13,7]);
 
     expect(mockMaxHeap.extractMaximum()).toEqual(90);
-    expect(mockMaxHeap._data).toEqual([50,10,1,13,7])
+    expect(mockMaxHeap._data).toEqual([50,13,10,1,7])
   });
 
   test('Method extractMaximum() should return null if heap is empty', () => {
