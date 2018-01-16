@@ -21,7 +21,7 @@ class MinHeap {
   }
 
   // lg n
-  insert(value){ 
+  insert(value) { 
      if (typeof value !== 'number')
       throw new TypeError('__ERROR__ value should be numeric');
 
@@ -29,46 +29,70 @@ class MinHeap {
     this._bubbleUp(this._data.length -1);
   }
 
-  _swapValues(indexA,indexB){
+  _swapValues(indexA,indexB) {
     let tempSwapValue = this._data[indexA];
 
     this._data[indexA] = this._data[indexB];
     this._data[indexB] = tempSwapValue;
   }
 
-  _bubbleUp(index){
+  _bubbleUp(index) {
     if (this._getParentIndex(index) === null)
       return;
 
     let parentIndex = this._getParentIndex(index);
 
-    if (this._data[parentIndex] > this._data[index]){
+    if (this._data[parentIndex] > this._data[index]) {
       this._swapValues(parentIndex, index);
       this._bubbleUp(parentIndex);
     }
   }
 
-  _bubbleDown(index){
+  _bubbleDown(index) {
     let minIndex = index;
     let leftIndex = this._getLeftIndex(index);
     let rightIndex = this._getRightIndex(index);
 
-    if (leftIndex <= this._data.length -1){
+    if (leftIndex <= this._data.length -1) {
       if (this._data[minIndex] > this._data[leftIndex])
         minIndex = leftIndex;
     }
-    if (rightIndex <= this._data.length -1){
+    if (rightIndex <= this._data.length -1) {
       if (this._data[minIndex] > this._data[rightIndex])
         minIndex = rightIndex;
     }
 
-    if (minIndex != index){
+    if (minIndex != index) {
       this._swapValues(index, minIndex);
       this._bubbleDown(minIndex);
     }
   }
 
-  extractMininum(){
+  bubbleSort() {
+    function _bubbleSort(array) {
+      let swapped;
+    
+      do {
+        swapped = false;
+        for (let i = 0; i < array.length; i ++) {
+          let temp = 0;
+          
+          if (array[i + 1] && array[i] > array[i + 1]) {
+            temp = array[i];
+            array[i] = array[i + 1];
+            array[i + 1] = temp;
+            swapped = true;
+          }
+        }
+      } while (swapped)
+        
+      return array;
+    }
+
+    return _bubbleSort(this._data);
+  }
+
+  extractMininum() {
     if (this._data.length <= 0)
       return null;
     
@@ -79,7 +103,7 @@ class MinHeap {
     return min;
   }
 
-  peek(){
+  peek() {
     if (this._data.length <= 0)
       return null;
     
