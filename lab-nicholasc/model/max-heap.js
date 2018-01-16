@@ -1,6 +1,6 @@
 'use strict';
 
-class MinHeap{
+class MaxHeap{
   constructor(){
     this._data = [];
   }
@@ -87,4 +87,4 @@ class MinHeap{
   }
 }
 
-module.exports = MinHeap;
+module.exports = MaxHeap;
