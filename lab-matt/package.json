@@ -1,0 +1,17 @@
+{
+  "name": "lab-matt",
+  "version": "1.0.0",
+  "description": "lab 30 code fellows 401 - max heap & basic sorting",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint ./"
+  },
+  "author": "Matthew LeBlanc",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^22.1.1"
+  }
+}
