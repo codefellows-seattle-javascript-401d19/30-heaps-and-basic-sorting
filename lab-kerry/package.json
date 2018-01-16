@@ -1,0 +1,14 @@
+{
+  "name": "lab-kerry",
+  "version": "1.0.0",
+  "description": "Max Heap and Sorting",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "author": "Kerry Nordstrom",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.0.6"
+  }
+}
