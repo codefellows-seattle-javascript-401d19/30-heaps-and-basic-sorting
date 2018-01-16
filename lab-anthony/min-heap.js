@@ -1,6 +1,6 @@
 'use strict';
 
-class MaxHeap{
+class MinHeap{
   constructor(){
     this._data = [];
   }
@@ -41,41 +41,41 @@ class MaxHeap{
 
     let parentIndex = this._getParentIndex(index);
 
-    if(this._data[parentIndex] < this._data[index]){
+    if(this._data[parentIndex] > this._data[index]){
       this._swapValues(parentIndex, index);
       this._bubbleUp(parentIndex);
     }
   }
 
   _bubbleDown(index){
-    let maxIndex = index;
+    let minIndex = index;
     let leftIndex = this._getLeftIndex(index);
     let rightIndex = this._getRightIndex(index);
 
     if(leftIndex <= this._data.length - 1){
-      if(this._data[maxIndex] < this._data[leftIndex])
-        maxIndex = leftIndex;
+      if(this._data[minIndex] > this._data[leftIndex])
+        minIndex = leftIndex;
     }
     if(rightIndex <= this._data.length - 1){
-      if(this._data[maxIndex] < this._data[rightIndex])
-        maxIndex = rightIndex;
+      if(this._data[minIndex] > this._data[rightIndex])
+        minIndex = rightIndex;
     }
 
-    if(maxIndex != index){
-      this._swapValues(index, maxIndex);
-      this._bubbleDown(maxIndex);
+    if(minIndex != index){
+      this._swapValues(index, minIndex);
+      this._bubbleDown(minIndex);
     }
   }
 
-  extractMaximum(){
+  extractMininum(){
     if(this._data.length <= 0)
       return null;
 
-    let max = this._data[0];
+    let min = this._data[0];
     let lastValue = this._data.pop();
     this._data[0] = lastValue;
     this._bubbleDown(0);
-    return max;
+    return min;
   }
 
   peek(){
@@ -86,4 +86,4 @@ class MaxHeap{
   }
 }
 
-module.exports = MaxHeap;
+module.exports = MinHeap;
