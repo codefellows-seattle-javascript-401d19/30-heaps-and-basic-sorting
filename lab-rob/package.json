@@ -1,0 +1,21 @@
+{
+  "name": "lab-rob",
+  "version": "1.0.0",
+  "description": "## Lab 28: Todo App ### 1/10/18",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "watch": "jest -i --coverage --watch",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.0.6"
+  }
+}
