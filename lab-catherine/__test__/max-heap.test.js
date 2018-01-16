@@ -10,7 +10,7 @@ describe('max-heap.js', () => {
     }).toThrow();
   });
 
-  test('testing that insert method is functioning and that peek returns max value', () => {
+  test('testing that insert method is functioning properly and that peek returns max value', () => {
     const testMaxHeap = new MaxHeap();
 
     testMaxHeap.insert(6);
@@ -21,7 +21,7 @@ describe('max-heap.js', () => {
     expect(testMaxHeap.peek()).toEqual(15);
   });
 
-  test('testing that extractMinimum method is functioning properly', () => {
+  test('testing that extractMaximum method is functioning properly', () => {
     const testMaxHeap = new MaxHeap();
 
     testMaxHeap.insert(10);
@@ -34,6 +34,5 @@ describe('max-heap.js', () => {
     expect(testMaxHeap.extractMaximum()).toEqual(8);
     expect(testMaxHeap.extractMaximum()).toEqual(7);
     expect(testMaxHeap.extractMaximum()).toEqual(5);
-    
   });
 });
