@@ -121,7 +121,7 @@ class MaxHeap{
 
 	this._generateHeap();
 
-	for (var i = this._data.length - 1; i > 0; i--) {
+	for (let i = this._data.length - 1; i > 0; i--) {
 		this._swapValues(i, 0);
 		this._generateMaxHeap(0, i);
 		}
