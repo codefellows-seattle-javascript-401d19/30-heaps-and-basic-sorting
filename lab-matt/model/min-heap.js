@@ -68,31 +68,7 @@ class MinHeap {
     }
   }
 
-  bubbleSort() {
-    function _bubbleSort(array) {
-      let swapped;
-    
-      do {
-        swapped = false;
-        for (let i = 0; i < array.length; i ++) {
-          let temp = 0;
-          
-          if (array[i + 1] && array[i] > array[i + 1]) {
-            temp = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = temp;
-            swapped = true;
-          }
-        }
-      } while (swapped)
-        
-      return array;
-    }
-
-    return _bubbleSort(this._data);
-  }
-
-  extractMininum() {
+  extractMaximum() {
     if (this._data.length <= 0)
       return null;
     
@@ -108,6 +84,28 @@ class MinHeap {
       return null;
     
   return this._data[0];
+  }
+
+  bubbleSort() {
+    const _bubbleSort = (array) =>  {
+      let swapped;
+    
+      do {
+        swapped = false;
+        for (let i = 0; i < array.length; i ++) {
+          let temp = 0;
+          
+          if (array[i + 1] && array[i] > array[i + 1]) {
+            this._swapValues(i, i + 1);
+            swapped = true;
+          }
+        }
+      } while (swapped)
+        
+      return array;
+    }
+
+    return _bubbleSort(this._data);
   }
 };
 
