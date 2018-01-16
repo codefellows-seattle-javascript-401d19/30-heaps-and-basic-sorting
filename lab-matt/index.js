@@ -1,53 +1,23 @@
-// 'use strict';
+'use strict';
 
-const MinHeap = require('./model/min-heap');
+const MaxHeap = require('./model/max-heap');
 
-let min = new MinHeap();
+let max = new MaxHeap();
 
-min.insert(2);
-min.insert(3);
-min.insert(5);
-min.insert(9);
-min.insert(1);
-min.insert(20);
-min.insert(10);
-min.insert(8);
-min.insert(123);
-min.insert(34);
-min.insert(-3);
-min.insert(-300);
+max.insert(2);
+max.insert(3);
+max.insert(5);
+max.insert(9);
+max.insert(1);
+max.insert(20);
+max.insert(123);
+max.insert(34);
+max.insert(-3);
+max.insert(-300);
+max.insert(150);
+max.insert(151);
 
-
-console.log(min);
-
-// console.log(min.extractMininum());
-
-// arr = min._data;
-
-// console.log(arr);
-
-// function bubbleSort(arr) {
-//   let swapped;
-//   do {
-//     swapped = false;
-//     for (let i = 0; i < arr.length; i ++) {
-//       let temp = 0;
-      
-//       if (arr[i + 1] && arr[i] > arr[i + 1]) {
-//         temp = arr[i];
-//         arr[i] = arr[i + 1];
-//         arr[i + 1] = temp;
-//         swapped = true;
-//       }
-//     }
-//   } while (swapped)
-    
-//   return arr;
-// }
-
-// console.log(bubbleSort(arr));
-
-// console.log(min.bubbleSort());
-min.bubbleSort();
-
-console.log(min);
+console.log(max);
+max.bubbleSort();
+console.log(max);
+console.log(max.peek());

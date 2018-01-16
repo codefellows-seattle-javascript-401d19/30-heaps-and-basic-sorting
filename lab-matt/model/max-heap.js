@@ -1,6 +1,6 @@
 'use strict';
 
-class MinHeap {
+class MaxHeap {
   constructor() {
     this._data = [];
   }
@@ -21,7 +21,7 @@ class MinHeap {
   }
 
   // lg n
-  insert(value) { 
+  insert(value) {
      if (typeof value !== 'number')
       throw new TypeError('__ERROR__ value should be numeric');
 
@@ -42,7 +42,7 @@ class MinHeap {
 
     let parentIndex = this._getParentIndex(index);
 
-    if (this._data[parentIndex] > this._data[index]) {
+    if (this._data[parentIndex] < this._data[index]) {
       this._swapValues(parentIndex, index);
       this._bubbleUp(parentIndex);
     }
@@ -68,7 +68,7 @@ class MinHeap {
     }
   }
 
-  extractMaximum() {
+  extractMinimum() {
     if (this._data.length <= 0)
       return null;
     
@@ -95,7 +95,7 @@ class MinHeap {
         for (let i = 0; i < array.length; i ++) {
           let temp = 0;
           
-          if (array[i + 1] && array[i] > array[i + 1]) {
+          if (array[i + 1] && array[i] < array[i + 1]) {
             this._swapValues(i, i + 1);
             swapped = true;
           }
@@ -109,4 +109,4 @@ class MinHeap {
   }
 };
 
-module.exports = MinHeap;
+module.exports = MaxHeap;

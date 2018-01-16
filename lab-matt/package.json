@@ -7,5 +7,9 @@
     "test": "jest -i --coverage"
   },
   "author": "Matthew LeBlanc",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.1.1"
+  }
 }
