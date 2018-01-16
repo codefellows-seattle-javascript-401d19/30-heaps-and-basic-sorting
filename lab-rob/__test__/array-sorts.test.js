@@ -27,5 +27,9 @@ describe('array-sorts.js', () => {
     expect(arraySorts.insertionSort(empty)).toEqual([]);
   });
 
-
+  test('selectionSort()', () => {
+    expect(arraySorts.selectionSort(testArray)).toEqual(sortedArray);
+    expect(testArray).toEqual(sortedArray);
+    expect(arraySorts.selectionSort(empty)).toEqual([]);
+  });
 });

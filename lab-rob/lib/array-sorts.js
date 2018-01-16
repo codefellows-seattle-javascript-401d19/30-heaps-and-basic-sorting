@@ -25,3 +25,23 @@ arraySorts.insertionSort = array => {
 
   return array;
 };
+
+arraySorts.selectionSort = array => {
+  let smallestIndex, smallest = null;
+  
+  for(let i = 0; i < array.length - 2; i++) {
+    smallestIndex = i;
+    smallest = array[i];
+
+    for(let j = i + 1; j < array.length; j++) {
+      if(array[j] < smallest) {
+        smallest = array[j];
+        smallestIndex = j;
+      }
+    }
+
+    [array[i], array[smallestIndex]] = [array[smallestIndex], array[i]];
+  }
+
+  return array;
+};
