@@ -7,17 +7,17 @@ const bubbleSort = (array) => {
   if(!array.length) {
     return array;
   }
-  let swap = array.length - 1;
-  let tempValue = null;
-  while(swap) {
-    for(let i = 0; i < swap; i++) {
+  let lengthOfArray = array.length - 1;
+  let tempValue;
+  while(lengthOfArray) {
+    for(let i = 0; i < lengthOfArray; i++) {
       if(array[i] > array[i + 1]) {
         tempValue = array[i];
         array[i] = array[i + 1];
         array[i + 1] = tempValue;
       }
     }
-    swap -= 1;
+    lengthOfArray -= 1;
   }
   return array;
 };
