@@ -21,7 +21,7 @@ class MaxHeap {
   }
 
   insert(value) {
-     if (typeof value !== 'number')
+    if (typeof value !== 'number')
       throw new TypeError('__ERROR__ value should be numeric');
 
     this._data.push(value);
@@ -82,7 +82,7 @@ class MaxHeap {
     if (this._data.length <= 0)
       return null;
     
-  return this._data[0];
+    return this._data[0];
   }
 
   bubbleSort() {
@@ -99,13 +99,13 @@ class MaxHeap {
             swapped = true;
           }
         }
-      } while (swapped)
+      } while (swapped);
         
       return array;
-    }
+    };
 
     return _bubbleSort(this._data);
   }
-};
+}
 
 module.exports = MaxHeap;
