@@ -109,25 +109,53 @@ describe('Testing selection sort method', () => {
 	afterEach(() => {
 		return Heap._data = []
 	});
-	
+
 	test('Selection sort should take valid heap and sort resulting array from smallest to largest.', () => {
-		expect(Heap.selectionSort(Heap._data)).toEqual([1, 2, 3, 7, 17, 19, 25, 32, 36, 100, 110]);
+		expect(Heap.selectionSort()).toEqual([1, 2, 3, 7, 17, 19, 25, 32, 36, 100, 110]);
 		expect(Heap._data).toBeInstanceOf(Array);
 	});
 	test('Selection sort should be throw error if wrong data type passed.', () => {
 		Heap._data = [];
 		
 		expect(() => {
-			Heap.selectionSort(Heap._data);
+			Heap.selectionSort();
 		}).toThrow();
 	});
 	test('Selection sort should be throw error if wrong data type passed.', () => {
 		Heap._data = null;
 
 		expect(() => {
-			Heap.selectionSort(Heap._data);
+			Heap.selectionSort();
 		}).toThrow();
 	});
 
-})
+});
 
+describe('Testing Heapsort sort method', () => {
+	beforeEach(() => {
+		heapFactory();
+	});
+
+	afterEach(() => {
+		return Heap._data = []
+	});
+
+	test('Heapsort sort should make valid heap from any array and sort resulting array from smallest to largest.', () => {
+		expect(Heap.heapSort()).toEqual([1, 2, 3, 7, 17, 19, 25, 32, 36, 100, 110]);
+		expect(Heap._data).toBeInstanceOf(Array);
+	});
+	test('Heap sort should be throw error if wrong data type passed.', () => {
+		Heap._data = '';
+
+		expect(() => {
+			Heap.heapSort();
+		}).toThrow();
+	});
+	test('Selection sort should be throw error if wrong null data passed.', () => {
+		Heap._data = null;
+
+		expect(() => {
+			Heap.heapSort();
+		}).toThrow();
+	});
+});

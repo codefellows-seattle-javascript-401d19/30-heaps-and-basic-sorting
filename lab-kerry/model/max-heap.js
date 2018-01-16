@@ -75,7 +75,7 @@ class MaxHeap{
 		let max = this._data[0];
 		let lastValue = this._data.pop();
 		this._data[0] = lastValue;
-		this._bubbleUp(0);
+		this._bubbleDown(0);
 		return max;
 	}
 
@@ -83,32 +83,78 @@ class MaxHeap{
 		if(this._data.length <= 0)
 		return null;
 
-	return this._data[0];
+		return this._data[0];
 	}
 
-	selectionSort(array) {
+	selectionSort() {
 
-	if (array.length <= 0) {
+	if (this._data.length <= 0) {
 		throw 'Array must contain at least one number';
 	}
 
-	if (array.length === null) {
+	if (this._data === null) {
 		throw 'Array must not be null';
 	}
 
-	for (let i = 0; i < array.length; i++) {
+	for (let i = 0; i < this._data.length; i++) {
 		let minimumIndex = i;
 
-		for (let j = i + 1; j < array.length; j++) {
-			if (array[j] < array[minimumIndex]) {
+		for (let j = i + 1; j < this._data.length; j++) {
+			if (this._data[j] < this._data[minimumIndex]) {
 				minimumIndex = j;
 			}
 		}
 		this._swapValues(i, minimumIndex)
 		}
-	return array;
+		return this._data;
 	}
 
+	heapSort() {
+
+	if (this._data.length <= 0) {
+		throw 'Array must contain at least one number';
+	}
+
+	if (this._data === null) {
+		throw 'Array must not be null';
+	}
+
+	this._generateHeap();
+
+	for (var i = this._data.length - 1; i > 0; i--) {
+		this._swapValues(i, 0);
+		this._generateMaxHeap(0, i);
+		}
+		return this._data;
+	}
+
+	_generateMaxHeap(index, length) {
+		
+		while (this._data) {
+			
+		let leftIndex = this._getLeftIndex(index);
+		let rightIndex = this._getRightIndex(index);
+		let largest = index;
+			
+		if (leftIndex < length && this._data[leftIndex] > this._data[largest]) {
+			largest = leftIndex;
+		}
+		if (rightIndex < length && this._data[rightIndex] > this._data[largest]) {
+			largest = rightIndex;
+		}
+		if (index === largest) {
+		 	break;
+		}
+		this._swapValues(index, largest);	
+		index = largest;
+		}
+	}
+
+	_generateHeap() {
+	for (let i = Math.floor(this._data.length / 2 - 1); i >= 0; i--) {
+		this._generateMaxHeap(i, this._data.length);
+		}
+	}
 };
 
 module.exports = MaxHeap;
