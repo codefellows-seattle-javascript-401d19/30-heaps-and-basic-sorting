@@ -1,0 +1,24 @@
+{
+  "name": "30-heaps-and-basic-sorting",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 30: Max Heap & Basic Sorting ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazzed/30-heaps-and-basic-sorting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazzed/30-heaps-and-basic-sorting/issues"
+  },
+  "homepage": "https://github.com/hazzed/30-heaps-and-basic-sorting#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
